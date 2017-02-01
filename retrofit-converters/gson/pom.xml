@@ -40,4 +40,53 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.0</version>
+          <configuration>
+            <source>${java.version}</source>
+            <target>${java.version}</target>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>3.0.0</version>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+            <configuration>
+              <artifactSet>
+                <excludes>
+                  <exclude>com.google.android</exclude>
+                  <exclude>org.codehaus.mojo</exclude>
+                  <exclude>commons-logging</exclude>
+                  <exclude>org.apache.httpcomponents</exclude>
+                  <exclude>commons-codec</exclude>
+                  <exclude>org.khronos</exclude>
+                  <exclude>xerces</exclude>
+                  <exclude>xpp3</exclude>
+                  <exclude>org.json</exclude>
+                  <exclude>com.squareup.okhttp3</exclude>
+                  <exclude>com.squareup.okio</exclude>
+                </excludes>
+              </artifactSet>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
 </project>
