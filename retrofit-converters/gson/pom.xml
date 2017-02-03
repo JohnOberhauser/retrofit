@@ -80,6 +80,7 @@
                   <exclude>org.json</exclude>
                   <exclude>com.squareup.okhttp3</exclude>
                   <exclude>com.squareup.okio</exclude>
+                  <!--<exclude>com.squareup.retrofit2</exclude>-->
                 </excludes>
               </artifactSet>
             </configuration>
